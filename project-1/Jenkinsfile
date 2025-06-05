@@ -22,8 +22,8 @@ pipeline{
         stage("plan"){
             steps{
                 sh 'pwd;cd project-1/; terraform init'
-                sh 'pwd;cd project-1/;' terraform plan -out tfplan
-                sh 'pwd;cd project-1/;' terraform show no-color tfplan >> tfplan.txt
+                sh 'pwd;cd project-1/; terraform plan -out tfplan'
+                sh 'pwd;cd project-1/; terraform show no-color tfplan >> tfplan.txt'
             }
         }
         stage('approval'){
